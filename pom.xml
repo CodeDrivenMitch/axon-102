@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <groupId>com.morlack</groupId>
+    <artifactId>axon102</artifactId>
+    <version>0-SNAPSHOT</version>
+
+
+    <modules>
+        <module>personal-data</module>
+    </modules>
+
+    <properties>
+        <java.version>13</java.version>
+        <kotlin.version>1.4.32</kotlin.version>
+        <spring-boot.version>2.4.0</spring-boot.version>
+
+        <!-- Axon -->
+        <axon.version>4.4.8</axon.version>
+        <axon-kotlin.version>0.1.0</axon-kotlin.version>
+
+        <!-- test deps -->
+        <mockk.version>1.10.2</mockk.version>
+        <springmockk.version>2.0.3</springmockk.version>
+        <reflections.version>0.9.12</reflections.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-reflect</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.portofrotterdam.hamis.vesselvisit</groupId>
+                <artifactId>vesselvisit-api</artifactId>
+                <version>${vesselvisit-api.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
