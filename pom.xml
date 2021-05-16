@@ -12,6 +12,7 @@
 
     <modules>
         <module>personal-data</module>
+        <module>metadata</module>
     </modules>
 
     <properties>
