@@ -6,8 +6,12 @@ import java.lang.reflect.Parameter
 
 @Suppress("unused") // Used by axon via META-INF file
 class HamisParameterResolverFactory : ParameterResolverFactory {
+    private val usernameMetadataResolver = UsernameMetadataResolver()
+
     override fun createInstance(executable: Executable?, parameters: Array<out Parameter>, parameterIndex: Int) = when {
-        parameters[parameterIndex].isAnnotationPresent(Username::class.java) -> UsernameMetadataResolver()
+        parameters[parameterIndex].isAnnotationPresent(Username::class.java) -> {
+            usernameMetadataResolver
+        }
         else -> null
     }
 }
