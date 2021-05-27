@@ -21,7 +21,8 @@ class MetadataDemoRunner(
         // Which is a bit late, since the event is already applied.
         try {
             val metaData = MetaData.from(mapOf("company" to "codecentric Netherlands B.V."))
-            commandGateway.sendAndWait<Any>(GenericCommandMessage(CreateProfileCommand("morlack", "Mitchell Herrijgers"), metaData))
+            val command = CreateProfileCommand("morlack", "Mitchell Herrijgers")
+            commandGateway.sendAndWait<Any>(GenericCommandMessage(command, metaData))
         } catch (e: Exception) {
             exception = e
         }
